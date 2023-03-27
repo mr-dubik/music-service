@@ -1,4 +1,7 @@
 import Logo from './img/logo.png'
+import Playlist01 from './img/playlist01.png'
+import Playlist02 from './img/playlist02.png'
+import Playlist03 from './img/playlist03.png'
 import './App.css'
 
 function App() {
@@ -461,7 +464,7 @@ function App() {
                     <a className="sidebar__link" href="!#">
                       <img
                         className="sidebar__img"
-                        src="img/playlist01.png"
+                        src={Playlist01}
                         alt="day's playlist"
                       />
                     </a>
@@ -470,7 +473,7 @@ function App() {
                     <a className="sidebar__link" href="!#">
                       <img
                         className="sidebar__img"
-                        src="img/playlist02.png"
+                        src={Playlist02}
                         alt="day's playlist"
                       />
                     </a>
@@ -479,7 +482,7 @@ function App() {
                     <a className="sidebar__link" href="!#">
                       <img
                         className="sidebar__img"
-                        src="img/playlist03.png"
+                        src={Playlist03}
                         alt="day's playlist"
                       />
                     </a>
