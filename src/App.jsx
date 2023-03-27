@@ -2,6 +2,7 @@ import Logo from './img/logo.png'
 import Playlist01 from './img/playlist01.png'
 import Playlist02 from './img/playlist02.png'
 import Playlist03 from './img/playlist03.png'
+import { ReactComponent as IconSearch } from './img/icon/search.svg'
 import './App.css'
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
             <div className="main__centerblock centerblock">
               <div className="centerblock__search search">
                 <svg className="search__svg">
-                  <use xlinkHref="img/icon/sprite.svg#icon-search" />
+                  <IconSearch src={IconSearch} />
                 </svg>
                 <input
                   className="search__text"
