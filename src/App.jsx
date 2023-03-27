@@ -1,3 +1,4 @@
+import Logo from './img/logo.png'
 import './App.css'
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
           <main className="main">
             <nav className="main__nav nav">
               <div className="nav__logo logo">
-                <img className="logo__image" src="img/logo.png" alt="logo" />
+                <img className="logo__image" src={Logo} alt="logo" />
               </div>
               <div className="nav__burger burger">
                 <span className="burger__line" />
