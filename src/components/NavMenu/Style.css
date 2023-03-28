@@ -1,0 +1,40 @@
+.main__nav {
+    width: 244px;
+    background-color: #181818;
+    padding: 20px 0 20px 36px;
+}
+
+.nav__logo {
+    width: 113.33px;
+    height: 43px;
+    padding: 13px 0 13px 0;
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+
+.logo__image {
+    width: 113.33px;
+    height: 17px;
+    color: #181818;
+}
+
+.nav__menu {
+    display: block;
+    visibility: visible;
+}
+
+.menu__list {
+    padding: 18px 0 10px 0;
+}
+
+.menu__item {
+    padding: 5px 0;
+    margin-bottom: 16px;
+}
+
+.menu__link {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
