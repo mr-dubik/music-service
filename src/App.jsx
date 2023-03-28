@@ -1,8 +1,8 @@
 import './App.css'
 import NavMenu from './components/NavMenu/NavMenu'
-import CentrBlock from './CentrBlock/CentrBlock'
-import SideBar from './SideBar/SideBar'
-import Bar from './Bar/Bar'
+import CentrBlock from './components/CentrBlock/CentrBlock'
+import SideBar from './components/SideBar/SideBar'
+import Bar from './components/Bar/Bar'
 
 function App() {
   return (

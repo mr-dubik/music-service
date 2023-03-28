@@ -1,5 +1,5 @@
 import './Style.css'
-import { ReactComponent as IconSearch } from '../img/icon/search.svg'
+import { ReactComponent as IconSearch } from '../../img/icon/search.svg'
 
 function Search() {
   return (

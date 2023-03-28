@@ -1,8 +1,8 @@
 import './Style.css'
 
-import { ReactComponent as IconWatch } from '../img/icon/watch.svg'
-import { ReactComponent as IconNote } from '../img/icon/note.svg'
-import { ReactComponent as IconLike } from '../img/icon/like.svg'
+import { ReactComponent as IconWatch } from '../../img/icon/watch.svg'
+import { ReactComponent as IconNote } from '../../img/icon/note.svg'
+import { ReactComponent as IconLike } from '../../img/icon/like.svg'
 import Search from '../Search/Search'
 import Filter from '../Filter/Filter'
 

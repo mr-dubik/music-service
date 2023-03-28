@@ -1,13 +1,13 @@
 import './Style.css'
-import { ReactComponent as IconLike } from '../img/icon/like.svg'
-import { ReactComponent as IconNote } from '../img/icon/note.svg'
-import { ReactComponent as IconPrev } from '../img/icon/prev.svg'
-import { ReactComponent as IconPlay } from '../img/icon/play.svg'
-import { ReactComponent as IconNext } from '../img/icon/next.svg'
-import { ReactComponent as IconRepeat } from '../img/icon/repeat.svg'
-import { ReactComponent as IconShuffle } from '../img/icon/shuffle.svg'
-import { ReactComponent as IconVolume } from '../img/icon/volume.svg'
-import { ReactComponent as IconDislike } from '../img/icon/dislike.svg'
+import { ReactComponent as IconLike } from '../../img/icon/like.svg'
+import { ReactComponent as IconNote } from '../../img/icon/note.svg'
+import { ReactComponent as IconPrev } from '../../img/icon/prev.svg'
+import { ReactComponent as IconPlay } from '../../img/icon/play.svg'
+import { ReactComponent as IconNext } from '../../img/icon/next.svg'
+import { ReactComponent as IconRepeat } from '../../img/icon/repeat.svg'
+import { ReactComponent as IconShuffle } from '../../img/icon/shuffle.svg'
+import { ReactComponent as IconVolume } from '../../img/icon/volume.svg'
+import { ReactComponent as IconDislike } from '../../img/icon/dislike.svg'
 
 function Bar() {
   return (

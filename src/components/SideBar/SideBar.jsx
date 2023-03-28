@@ -1,7 +1,7 @@
 import './Style.css'
-import Playlist01 from '../img/playlist01.png'
-import Playlist02 from '../img/playlist02.png'
-import Playlist03 from '../img/playlist03.png'
+import Playlist01 from '../../img/playlist01.png'
+import Playlist02 from '../../img/playlist02.png'
+import Playlist03 from '../../img/playlist03.png'
 
 function SideBar() {
   return (
