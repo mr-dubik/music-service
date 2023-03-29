@@ -317,3 +317,14 @@
 .volume__progress-line {
     width: 109px;
 }
+
+.track-play__contain_flex {
+    display: flex;
+    gap: 10px;
+}
+
+.track-play__flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
