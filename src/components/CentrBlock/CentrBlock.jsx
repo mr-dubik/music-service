@@ -1,12 +1,45 @@
 import './Style.css'
-
+import { useEffect, useState } from 'react'
 import { ReactComponent as IconWatch } from '../../img/icon/watch.svg'
 import { ReactComponent as IconNote } from '../../img/icon/note.svg'
 import { ReactComponent as IconLike } from '../../img/icon/like.svg'
 import Search from '../Search/Search'
 import Filter from '../Filter/Filter'
+import SkeletonCenter from '../Skeleton/SkeletonCenter'
 
 function CentrBlock() {
+  const [isLoading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (isLoading)
+    return (
+      <div className="main__centerblock centerblock">
+        <Search />
+        <h2 className="centerblock__h2">Треки</h2>
+        <Filter />
+        <div className="centerblock__content">
+          <div className="content__title playlist-title">
+            <div className="playlist-title__col col01">Трек</div>
+            <div className="playlist-title__col col02">ИСПОЛНИТЕЛЬ</div>
+            <div className="playlist-title__col col03">АЛЬБОМ</div>
+            <div className="playlist-title__col col04">
+              <svg className="playlist-title__svg" alt="time">
+                <IconWatch />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <SkeletonCenter />
+      </div>
+    )
+
   return (
     <div className="main__centerblock centerblock">
       <Search />

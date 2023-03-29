@@ -1,0 +1,18 @@
+.skeleton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.skeleton__block_2 {
+    margin-left: 20px;
+}
+
+.skeleton__block_3 {
+    margin-left: 137px;
+}
+
+.skeleton__block_4 {
+    margin-left: 80px;
+}
