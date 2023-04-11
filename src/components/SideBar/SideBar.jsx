@@ -1,5 +1,6 @@
 import './Style.css'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import { NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Playlist01 from '../../img/playlist01.png'
 import Playlist02 from '../../img/playlist02.png'
@@ -56,31 +57,31 @@ function SideBar() {
       <div className="sidebar__block">
         <div className="sidebar__list">
           <div className="sidebar__item">
-            <a className="sidebar__link" href="!#">
+            <NavLink className="sidebar__link" to="/playlist/of-the-day">
               <img
                 className="sidebar__img"
                 src={Playlist01}
                 alt="day's playlist"
               />
-            </a>
+            </NavLink>
           </div>
           <div className="sidebar__item">
-            <a className="sidebar__link" href="!#">
+            <NavLink className="sidebar__link" to="/playlist/hits">
               <img
                 className="sidebar__img"
                 src={Playlist02}
                 alt="day's playlist"
               />
-            </a>
+            </NavLink>
           </div>
           <div className="sidebar__item">
-            <a className="sidebar__link" href="!#">
+            <NavLink className="sidebar__link" to="/playlist/indi">
               <img
                 className="sidebar__img"
                 src={Playlist03}
                 alt="day's playlist"
               />
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>

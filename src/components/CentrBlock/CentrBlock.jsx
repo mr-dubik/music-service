@@ -7,7 +7,7 @@ import Search from '../Search/Search'
 import Filter from '../Filter/Filter'
 import SkeletonCenter from '../Skeleton/SkeletonCenter'
 
-function CentrBlock() {
+function CentrBlock(props) {
   const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function CentrBlock() {
     return (
       <div className="main__centerblock centerblock">
         <Search />
-        <h2 className="centerblock__h2">Треки</h2>
+        <h2 className="centerblock__h2">{props.namePage}</h2>
         <Filter />
         <div className="centerblock__content">
           <div className="content__title playlist-title">
@@ -43,7 +43,7 @@ function CentrBlock() {
   return (
     <div className="main__centerblock centerblock">
       <Search />
-      <h2 className="centerblock__h2">Треки</h2>
+      <h2 className="centerblock__h2">{props.namePage}</h2>
       <Filter />
       <div className="centerblock__content">
         <div className="content__title playlist-title">
