@@ -34,6 +34,7 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    background-color: #181818;
 }
 
 .bar__player {
