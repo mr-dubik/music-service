@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import Logo from '../../img/logo_black.png'
 
 import './style.css'
@@ -19,12 +20,12 @@ function LoginPage() {
         </div>
 
         <div className="login__buttons">
-          <button type="button" className="login__button">
+          <NavLink type="button" className="login__button" to='/home'>
             Войти
-          </button>
-          <button type="button" className="register__button">
+          </NavLink>
+          <NavLink type="button" className="register__button" to='/register'>
             Зарегестироваться
-          </button>
+          </NavLink>
         </div>
       </div>
     </div>
