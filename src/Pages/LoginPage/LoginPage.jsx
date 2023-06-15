@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom'
 import Logo from '../../img/logo_black.png'
+import { USERS } from "../../constans";
 
 import './style.css'
 
@@ -9,6 +10,7 @@ function LoginPage() {
   const [inputPassword, setInputPassword] = useState('');
 
   const clg = () => {
+    console.log(USERS[10])
     console.log(inputLogin)
     console.log(inputPassword)
   }
