@@ -3,16 +3,21 @@ import { NavLink } from 'react-router-dom'
 import Logo from '../../img/logo_black.png'
 import { USERS } from "../../constans";
 
+
 import './style.css'
 
 function LoginPage() {
   const [inputLogin, setInputLogin] = useState('');
   const [inputPassword, setInputPassword] = useState('');
 
-  const clg = () => {
-    console.log(USERS[10])
-    console.log(inputLogin)
-    console.log(inputPassword)
+  const Login = () => {
+
+    if (inputLogin === 'user' && inputPassword === 'user') {
+      console.log('good')
+    } else {
+      console.log(USERS[10])
+    }
+
   }
 
   return (
@@ -32,7 +37,7 @@ function LoginPage() {
         </div>
 
         <div className="login__buttons">
-          <NavLink type="button" className="login__button" to='/home' onClick={clg}>
+          <NavLink type="button" className="login__button" to='/home' onClick={Login}>
             Войти
           </NavLink>
           <NavLink type="button" className="register__button" to='/register'>
