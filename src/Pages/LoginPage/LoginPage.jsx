@@ -7,12 +7,19 @@ import { USERS } from "../../constans";
 import './style.css'
 
 function LoginPage() {
+
   const [inputLogin, setInputLogin] = useState('');
   const [inputPassword, setInputPassword] = useState('');
+
+
+  // localStorage.setItem('user', inputLogin)
+  // localStorage.setItem('password', inputPassword)
 
   const Login = () => {
 
     if (inputLogin === 'user' && inputPassword === 'user') {
+      localStorage.setItem('user')
+      console.log(localStorage)
       console.log('good')
     } else {
       console.log(USERS[10])
