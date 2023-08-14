@@ -10,6 +10,7 @@ import { ReactComponent as IconRepeat } from '../../img/icon/repeat.svg'
 import { ReactComponent as IconShuffle } from '../../img/icon/shuffle.svg'
 import { ReactComponent as IconVolume } from '../../img/icon/volume.svg'
 import { ReactComponent as IconDislike } from '../../img/icon/dislike.svg'
+import track from '../../../public/sound/Bobby_Marleni_-_Dropin.mp3'
 
 function Bar() {
   const [isLoading, setLoading] = useState(true)
@@ -118,7 +119,7 @@ function Bar() {
                   <IconPrev />
                 </svg>
               </div>
-              <div className="player__btn-play _btn">
+              <div className="player__btn-play _btn" onClick={track.play()}>
                 <svg className="player__btn-play-svg" alt="play">
                   <IconPlay />
                 </svg>
