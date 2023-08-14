@@ -9,7 +9,9 @@ import Indi from './Pages/Indi/Indi'
 import LoginPage from './Pages/LoginPage/LoginPage'
 import RegisterPage from './Pages/RegisterPage/RegisterPage'
 
-function AppRoutes({user}) {
+function AppRoutes() {
+  const user = localStorage.getItem('user');
+  console.log(user)
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
