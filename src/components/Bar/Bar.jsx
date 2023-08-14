@@ -1,5 +1,5 @@
 import './Style.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import { ReactComponent as IconLike } from '../../img/icon/like.svg'
 import { ReactComponent as IconNote } from '../../img/icon/note.svg'
@@ -10,10 +10,15 @@ import { ReactComponent as IconRepeat } from '../../img/icon/repeat.svg'
 import { ReactComponent as IconShuffle } from '../../img/icon/shuffle.svg'
 import { ReactComponent as IconVolume } from '../../img/icon/volume.svg'
 import { ReactComponent as IconDislike } from '../../img/icon/dislike.svg'
-import track from '../../../public/sound/Bobby_Marleni_-_Dropin.mp3'
+import track from '../../sound/Bobby_Marleni_-_Dropin.mp3'
 
 function Bar() {
   const [isLoading, setLoading] = useState(true)
+  const audioRef = useRef(new Audio(track))
+
+  const audioPlay = () => {
+    audioRef.play()
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -119,8 +124,12 @@ function Bar() {
                   <IconPrev />
                 </svg>
               </div>
-              <div className="player__btn-play _btn" onClick={track.play()}>
-                <svg className="player__btn-play-svg" alt="play">
+              <div className="player__btn-play _btn">
+                <svg
+                  className="player__btn-play-svg"
+                  alt="play"
+                  onClick={audioPlay}
+                >
                   <IconPlay />
                 </svg>
               </div>
