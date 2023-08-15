@@ -5,6 +5,7 @@ import { ReactComponent as IconLike } from '../../img/icon/like.svg'
 import { ReactComponent as IconNote } from '../../img/icon/note.svg'
 import { ReactComponent as IconPrev } from '../../img/icon/prev.svg'
 import { ReactComponent as IconPlay } from '../../img/icon/play.svg'
+import { ReactComponent as IconPause } from '../../img/icon/pause.svg'
 import { ReactComponent as IconNext } from '../../img/icon/next.svg'
 import { ReactComponent as IconRepeat } from '../../img/icon/repeat.svg'
 import { ReactComponent as IconShuffle } from '../../img/icon/shuffle.svg'
@@ -17,9 +18,20 @@ function Bar() {
   const audioRef = useRef(new Audio(track))
   const progressRef = useRef()
 
+  const [isPlay, setPlay] = useState(false)
+  const [isIconPlayPause, setIconPlayPause] = useState(<IconPlay />)
   const audioPlay = () => {
     const audio = audioRef.current
-    audio.play()
+
+    if (isPlay) {
+      audio.pause()
+      setPlay(false)
+      setIconPlayPause(<IconPlay />)
+    } else {
+      audio.play()
+      setPlay(true)
+      setIconPlayPause(<IconPause />)
+    }
   }
 
   useEffect(() => {
@@ -37,8 +49,7 @@ function Bar() {
 
   const volumeChange = () => {
     const volume = document.getElementById('volume')
-    console.log(volume.value)
-    console.log(audioRef)
+    audioRef.current.volume = volume.value
   }
 
   useEffect(() => {
@@ -158,7 +169,7 @@ function Bar() {
                   alt="play"
                   onClick={audioPlay}
                 >
-                  <IconPlay />
+                  {isIconPlayPause}
                 </svg>
               </div>
               <div className="player__btn-next">
@@ -225,7 +236,8 @@ function Bar() {
                   type="range"
                   name="range"
                   min="0"
-                  max="100"
+                  max="1"
+                  step="0.01"
                   onChange={volumeChange}
                 />
               </div>
