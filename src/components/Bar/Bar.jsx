@@ -15,9 +15,30 @@ import track from '../../sound/Bobby_Marleni_-_Dropin.mp3'
 function Bar() {
   const [isLoading, setLoading] = useState(true)
   const audioRef = useRef(new Audio(track))
+  const progressRef = useRef()
 
   const audioPlay = () => {
-    audioRef.play()
+    const audio = audioRef.current
+    audio.play()
+  }
+
+  useEffect(() => {
+    audioRef.current.ontimeupdate = () => {
+      const progress =
+        (audioRef.current.currentTime / audioRef.current.duration) * 1000
+      progressRef.current.value = progress
+    }
+  }, [audioRef, progressRef])
+
+  const progressChange = () => {
+    audioRef.current.currentTime =
+      (progressRef.current.value / 1000) * audioRef.current.duration
+  }
+
+  const volumeChange = () => {
+    const volume = document.getElementById('volume')
+    console.log(volume.value)
+    console.log(audioRef)
   }
 
   useEffect(() => {
@@ -115,7 +136,14 @@ function Bar() {
   return (
     <div className="bar">
       <div className="bar__content">
-        <div className="bar__player-progress" />
+        <input
+          className="bar__player-progress"
+          type="range"
+          ref={progressRef}
+          defaultValue={0}
+          max={1000}
+          onChange={progressChange}
+        />
         <div className="bar__player-block">
           <div className="bar__player player">
             <div className="player__controls">
@@ -193,8 +221,12 @@ function Bar() {
               <div className="volume__progress _btn">
                 <input
                   className="volume__progress-line _btn"
+                  id="volume"
                   type="range"
                   name="range"
+                  min="0"
+                  max="100"
+                  onChange={volumeChange}
                 />
               </div>
             </div>
