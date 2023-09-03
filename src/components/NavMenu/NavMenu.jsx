@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import Burger from '../Burger/Burger'
 import Logo from '../../img/logo.png'
 import './Style.css'
+import Dark from '../../img/icon/dark.svg'
+
+import ThemeSwitcher from '../theme-switcher/index'
 
 function NavMenu() {
   const Div = styled.div``
@@ -47,6 +50,8 @@ function NavMenu() {
                 Инди-заряд
               </NavLink>
             </li>
+            <img src={Dark} alt="Dark icon theme" />
+            <ThemeSwitcher />
           </ul>
         </div>
       )}
