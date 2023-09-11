@@ -13,24 +13,24 @@ import RegisterPage from './Pages/RegisterPage/RegisterPage'
 
 import {
   ThemeContext,
-  themes,
-  useThemeContext,
+  // themes,
+  // useThemeContext,
 } from './components/context/theme'
 
 function AppRoutes() {
   const user = localStorage.getItem('user')
-  console.log(user)
 
-  const { theme } = useThemeContext()
-  const [currentTheme, setCurrentTheme] = useState(themes.light)
+  // const { theme } = useThemeContext()
+  const [currentTheme, setCurrentTheme] = useState('dark')
+  // console.log('Change theme', theme)
 
   const toggleTheme = () => {
-    if (currentTheme === themes.dark) {
-      setCurrentTheme(themes.light)
+    if (currentTheme === 'dark') {
+      setCurrentTheme('light')
       return
     }
 
-    setCurrentTheme(themes.light)
+    setCurrentTheme('dark')
   }
 
   return (
@@ -45,8 +45,8 @@ function AppRoutes() {
             element={
               <HomePage
                 style={{
-                  backgroundColor: theme.background,
-                  color: theme.color,
+                  backgroundColor: `themes[theme].background`,
+                  color: `themes[theme].color`,
                 }}
               />
             }

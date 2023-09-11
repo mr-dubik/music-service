@@ -5,7 +5,6 @@ import Burger from '../Burger/Burger'
 import Logo from '../../img/logo.png'
 import './Style.css'
 import Dark from '../../img/icon/dark.svg'
-
 import ThemeSwitcher from '../theme-switcher/index'
 
 function NavMenu() {
