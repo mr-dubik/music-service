@@ -8,7 +8,6 @@ function HomePage() {
   const namePage = 'Треки'
   const theme = useThemeContext()
   const colorTheme = theme.theme
-  console.log(colorTheme)
 
   return (
     <div className="wrapper">
