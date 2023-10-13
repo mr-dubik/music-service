@@ -1,18 +1,56 @@
 import './Style.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import { ReactComponent as IconLike } from '../../img/icon/like.svg'
 import { ReactComponent as IconNote } from '../../img/icon/note.svg'
 import { ReactComponent as IconPrev } from '../../img/icon/prev.svg'
 import { ReactComponent as IconPlay } from '../../img/icon/play.svg'
+import { ReactComponent as IconPause } from '../../img/icon/pause.svg'
 import { ReactComponent as IconNext } from '../../img/icon/next.svg'
 import { ReactComponent as IconRepeat } from '../../img/icon/repeat.svg'
 import { ReactComponent as IconShuffle } from '../../img/icon/shuffle.svg'
 import { ReactComponent as IconVolume } from '../../img/icon/volume.svg'
 import { ReactComponent as IconDislike } from '../../img/icon/dislike.svg'
+import track from '../../sound/Bobby_Marleni_-_Dropin.mp3'
 
 function Bar() {
   const [isLoading, setLoading] = useState(true)
+  const audioRef = useRef(new Audio(track))
+  const progressRef = useRef()
+
+  const [isPlay, setPlay] = useState(false)
+  const [isIconPlayPause, setIconPlayPause] = useState(<IconPlay />)
+  const audioPlay = () => {
+    const audio = audioRef.current
+
+    if (isPlay) {
+      audio.pause()
+      setPlay(false)
+      setIconPlayPause(<IconPlay />)
+    } else {
+      audio.play()
+      setPlay(true)
+      setIconPlayPause(<IconPause />)
+    }
+  }
+
+  useEffect(() => {
+    audioRef.current.ontimeupdate = () => {
+      const progress =
+        (audioRef.current.currentTime / audioRef.current.duration) * 1000
+      progressRef.current.value = progress
+    }
+  }, [audioRef, progressRef])
+
+  const progressChange = () => {
+    audioRef.current.currentTime =
+      (progressRef.current.value / 1000) * audioRef.current.duration
+  }
+
+  const volumeChange = () => {
+    const volume = document.getElementById('volume')
+    audioRef.current.volume = volume.value
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -109,7 +147,14 @@ function Bar() {
   return (
     <div className="bar">
       <div className="bar__content">
-        <div className="bar__player-progress" />
+        <input
+          className="bar__player-progress"
+          type="range"
+          ref={progressRef}
+          defaultValue={0}
+          max={1000}
+          onChange={progressChange}
+        />
         <div className="bar__player-block">
           <div className="bar__player player">
             <div className="player__controls">
@@ -119,8 +164,12 @@ function Bar() {
                 </svg>
               </div>
               <div className="player__btn-play _btn">
-                <svg className="player__btn-play-svg" alt="play">
-                  <IconPlay />
+                <svg
+                  className="player__btn-play-svg"
+                  alt="play"
+                  onClick={audioPlay}
+                >
+                  {isIconPlayPause}
                 </svg>
               </div>
               <div className="player__btn-next">
@@ -183,8 +232,13 @@ function Bar() {
               <div className="volume__progress _btn">
                 <input
                   className="volume__progress-line _btn"
+                  id="volume"
                   type="range"
                   name="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  onChange={volumeChange}
                 />
               </div>
             </div>
